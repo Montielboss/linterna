@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOLIS — Control de luz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="glow-field"></div>
+  <div class="flash" id="flash"></div>
+
+  <div class="stage">
+    <div class="status"><span class="dot"></span><span id="statusText">Estado: apagado</span></div>
+    <h1 id="headline">Tu linterna. Bajo control.</h1>
+    <p class="sub" id="subtext">Un interruptor. Dos estados. Nada más que eso — hasta que decidas apagarla.</p>
+    <div class="controls">
+      <button class="switch" id="on">Encender</button>
+      <button class="switch" id="off">Apagar</button>
+    </div>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="panel" id="panel">
+    <div class="panel-eyebrow">Plan requerido</div>
+    <h2>Oscuridad Total</h2>
+    <div class="price"><span class="amount">$4.99</span><span class="period">/ mes, para apagar tu luz</span></div>
+    <p class="desc">Apagar es una función premium. Suscríbete para acceder a la oscuridad completa, sin restricciones ni parpadeos.</p>
+    <ul class="features">
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#7c6cf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Oscuridad ilimitada, sin cortes</li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#7c6cf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Cancela cuando quieras encender de nuevo</li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#7c6cf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Soporte prioritario para emergencias de luz</li>
+    </ul>
+    <div class="panel-actions">
+      <button class="cta" id="subscribe">Suscribirme para apagar</button>
+      <button class="cta-ghost" id="stayLit">Mejor la dejo encendida</button>
+    </div>
+    <div class="confirm" id="confirmMsg">Es broma — tu luz ya está apagada.</div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
