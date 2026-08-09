@@ -11,6 +11,9 @@ const stayLitBtn = document.getElementById('stayLit');
 const confirmMsg = document.getElementById('confirmMsg');
 const flash = document.getElementById('flash');
 
+// 👉 reemplaza esto por tu link de pago real (Stripe Payment Link, PayPal, Gumroad, etc.)
+const PAYMENT_URL = 'https://ko-fi.com/linterna12';
+
 function turnOn(){
   body.classList.add('lit');
   statusText.textContent = 'Estado: encendido — máxima intensidad';
@@ -23,22 +26,18 @@ function turnOn(){
   flash.classList.add('fire');
 }
 
+// "Apagar" nunca apaga de verdad — solo abre el plan.
 function requestOff(){
   scrim.classList.add('show');
   panel.classList.add('show');
   confirmMsg.classList.remove('show');
+  subscribeBtn.disabled = false;
+  subscribeBtn.textContent = 'Suscribirme para apagar';
 }
 
 function closePanel(){
   scrim.classList.remove('show');
   panel.classList.remove('show');
-}
-
-function actuallyTurnOff(){
-  body.classList.remove('lit');
-  statusText.textContent = 'Estado: apagado';
-  headline.textContent = 'Tu linterna. Bajo control.';
-  subtext.textContent = 'Un interruptor. Dos estados. Nada más que eso — hasta que decidas apagarla.';
 }
 
 onBtn.addEventListener('click', turnOn);
@@ -48,10 +47,9 @@ scrim.addEventListener('click', closePanel);
 subscribeBtn.addEventListener('click', () => {
   confirmMsg.classList.add('show');
   subscribeBtn.textContent = 'Procesando...';
+  subscribeBtn.disabled = true;
   setTimeout(() => {
-    actuallyTurnOff();
-    closePanel();
-    subscribeBtn.textContent = 'Suscribirme para apagar';
+    window.location.href = PAYMENT_URL;
   }, 900);
 });
 
